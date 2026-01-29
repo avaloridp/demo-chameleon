@@ -1,4 +1,4 @@
-package com.keeonline.chameleon.api.v1.model;
+package com.keeonline.demo-chameleon.api.v1.model;
 
 public class GreetingsDto {
     private final int version = 1;
