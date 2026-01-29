@@ -2,7 +2,7 @@ FROM eclipse-temurin:21-jre-ubi9-minimal
 
 ARG VERSION="unknown"
 
-COPY build/libs/chameleon-${VERSION}.jar /opt/app.jar
+COPY build/libs/demo-chameleon-${VERSION}.jar /opt/app.jar
 
 LABEL org.opencontainers.image.version=${VERSION}
 

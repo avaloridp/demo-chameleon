@@ -26,7 +26,7 @@ jobs:
             - name: Configure credentials
               uses: aws-actions/configure-aws-credentials@v4
               with:
-                role-to-assume: arn:aws:iam::${{secrets.AWS_ACCOUNT_ID}}:role/IaC
+                role-to-assume: arn:aws:iam::${{secrets.AWS_ACCOUNT_ID}}:role/avaloridpIaC
                 aws-region: ${{secrets.AWS_REGION}}
 
             - name: Get the application load balancer DNS name
@@ -44,7 +44,7 @@ jobs:
                 sparse-checkout: sit/karate
 
             - name: Execute the SITs
-              uses: keeonline/gh-actions/actions/karate-tests@v0.0.8
+              uses: avaloridp/github-actions/actions/karate-tests@v0.0.2
               with:
                 tests_directory: sit/karate
                 reports_upload_title: System Integration Test Reports

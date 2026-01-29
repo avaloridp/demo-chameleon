@@ -1,9 +1,9 @@
-Feature: Call the greetings endpoints for chameleon based services
+Feature: Call the greetings endpoints for demo-chameleon based services
 
 Scenario: Show the baseUrl value
     * print baseUrl
 
-Scenario Outline: Successful call to chameleon service variants
+Scenario Outline: Successful call to demo-chameleon service variants
     Given url baseUrl
     And path '<serviceName>/v1/greetings'
     And retry until responseStatus == 200
