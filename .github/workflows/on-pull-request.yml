@@ -1,0 +1,15 @@
+name: Pull request
+
+on:
+  pull_request:
+
+jobs:
+  sits:
+    name: Run SITs
+    uses: ./.github/workflows/reusable-on-event-sit.yml
+    permissions:
+      id-token: write
+    secrets:
+      inherit
+    with:
+      app_ref: ${{github.head_ref}}
