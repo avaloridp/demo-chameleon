@@ -5,11 +5,18 @@ on:
 
 jobs:
   sits:
-    name: Run SITs
-    uses: ./.github/workflows/reusable-on-event-sit.yml
-    permissions:
-      id-token: write
-    secrets:
-      inherit
-    with:
-      app_ref: ${{github.head_ref}}
+    name: Placeholder
+    runs-on: ubuntu-24.04
+    steps:
+        - name: Spurs are getting as bad as West Han
+          run: |
+              echo "Thomas Frank? Who?"
+
+    # name: Run SITs
+    # uses: ./.github/workflows/reusable-on-event-sit.yml
+    # permissions:
+    #   id-token: write
+    # secrets:
+    #   inherit
+    # with:
+    #   app_ref: ${{github.head_ref}}
