@@ -44,12 +44,12 @@ jobs:
 
             - name: Get the artefact version values
               id: app_version
-              uses: keeonline/gh-actions/actions/artifact-version@v0.0.8
+              uses: avaloridp/gh-actions/actions/artifact-version@v0.0.8
               with:
                 repo_ref: ${{inputs.repo_ref}}
 
             - name: Terraform action
-              uses: keeonline/gh-actions/actions/terraform-cmd@v0.0.8
+              uses: avaloridp/gh-actions/actions/terraform-cmd@v0.0.8
               env:
                 TF_VAR_app_environment: ${{inputs.app_environment}}
                 TF_VAR_app_version: ${{steps.app_version.outputs.value}}
