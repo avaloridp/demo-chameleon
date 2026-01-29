@@ -1,4 +1,4 @@
-package com.keeonline.demo-chameleon;
+package com.keeonline.chameleon;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
