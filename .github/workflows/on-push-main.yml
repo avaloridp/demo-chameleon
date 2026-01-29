@@ -16,15 +16,15 @@ jobs:
         steps:
             - name: Get the artifact version
               id: version
-              uses: avaloridp/gh-actions/actions/artifact-version@v0.0.8
+              uses: avaloridp/github-actions/actions/artifact-version@v0.0.2
 
             - name: Build the application
-              uses: avaloridp/gh-actions/actions/java-build@v0.0.8
+              uses: avaloridp/github-actions/actions/java-build@v0.0.2
               with:
                 artifact_version: ${{steps.version.outputs.value}}
 
             - name: Package the application as an image
-              uses: avaloridp/gh-actions/actions/docker-build@v0.0.8
+              uses: avaloridp/github-actions/actions/docker-build@v0.0.2
               with:
                 image: demo-chameleon
                 artifact_version: ${{steps.version.outputs.value}}
@@ -37,7 +37,7 @@ jobs:
                 GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
 
             - name: Publish the image
-              uses: avaloridp/gh-actions/actions/dockerhub-publish@v0.0.8
+              uses: avaloridp/github-actions/actions/dockerhub-publish@v0.0.2
               with:
                 username: ${{vars.DOCKERHUB_USERNAME}}
                 password: ${{secrets.DOCKERHUB_TOKEN}}
