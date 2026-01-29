@@ -51,10 +51,10 @@ jobs:
               run: |
                 docker-compose down
 
-            # - name: Publish the image
-            #   uses: keeonline/gh-actions/actions/dockerhub-publish@v0.0.8
-            #   with:
-            #     username: ${{vars.DOCKERHUB_USERNAME}}
-            #     password: ${{secrets.DOCKERHUB_TOKEN}}
-            #     source_image: demo-chameleon:${{steps.version.outputs.value}}
-            #     target_image: ${{vars.DOCKERHUB_USERNAME}}/demo-chameleon:${{steps.version.outputs.value}}
+            - name: Publish the image
+              uses: keeonline/gh-actions/actions/dockerhub-publish@v0.0.8
+              with:
+                username: ${{vars.DOCKERHUB_USERNAME}}
+                password: ${{secrets.DOCKERHUB_TOKEN}}
+                source_image: demo-chameleon:${{steps.version.outputs.value}}
+                target_image: ${{vars.DOCKERHUB_USERNAME}}/demo-chameleon:${{steps.version.outputs.value}}
